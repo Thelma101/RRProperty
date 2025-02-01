@@ -29,14 +29,9 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/about', (req, res) => {
-    res.render('index')
+app.get('/services', (req, res) => {
+    res.render('services')
 })
-
-app.get('/', (req, res) => {
-    res.render('index')
-})
-
 app.get('/about', (req, res) => {
     res.render('about')
 })
@@ -49,9 +44,7 @@ app.get('/property/details', (req, res) => {
     res.render('property-single')
 })
 
-app.get('/services', (req, res) => {
-    res.render('services')
-})
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
