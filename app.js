@@ -26,25 +26,30 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.render('index')
-})
-
-app.get('/services', (req, res) => {
-    res.render('services')
-})
-app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('index', {home:true})
 })
 
 app.get('/properties', (req, res) => {
-    res.render('properties')
+    res.render('properties', {properties: true})
 })
 
-app.get('/property/details', (req, res) => {
-    res.render('property-single')
+app.get('/services', (req, res) => {
+    res.render('services', {services: true})
 })
 
+app.get('/about', (req, res) => {
+    res.render('about', {about: true})
+})
 
+app.get('/contact', (req, res) => {
+    res.render('contact', {contact: true})
+})
+
+app.get('*', (req, res) => {
+    res.render({
+        '404:':  'notfound'
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
