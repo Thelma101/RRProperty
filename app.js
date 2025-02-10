@@ -33,6 +33,10 @@ app.get('/properties', (req, res) => {
     res.render('properties', {properties: true})
 })
 
+app.get('/property/details', (req, res) => {
+    res.render('property-single', {properties: true})
+})
+
 app.get('/services', (req, res) => {
     res.render('services', {services: true})
 })
